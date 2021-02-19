@@ -1,0 +1,26 @@
+* {
+  font-family: "Roboto", sans-serif;
+  outline: none;
+
+  .boardSize {
+    display: block;
+    width: 150px;
+    padding: 10px 10px;
+    margin: 10px auto;
+    background-color: rgb(255, 230, 0);
+    border: none;
+    color: rgb(29, 2, 24);
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .boardSize:hover {
+    background-color: rgb(255, 208, 0);
+    color: whitesmoke;
+  }
+  .boardSize:visited {
+    color: white;
+  }
+  .startGameButton {
+    padding: 10px 40px;
+  }
+}

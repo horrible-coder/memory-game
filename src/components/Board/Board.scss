@@ -1,0 +1,78 @@
+$primary-color: rgb(247, 93, 93);
+
+.boardHeader {
+  display: flex;
+  margin: 0 auto;
+  width: 600px;
+  box-shadow: 1px 5px 10px 1px whitesmoke;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1em;
+  background: linear-gradient(to left, white 49.7%, rgb(247, 93, 93) 50.3%);
+
+  .tries {
+    flex: 1;
+    padding: 0 30px;
+    p {
+      margin: 15px 0;
+      color: white;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .time {
+    flex: 1;
+    text-align: right;
+    padding: 15px 30px;
+    border-bottom: 1px solid whitesmoke;
+    color: $primary-color;
+    font-weight: bold;
+
+    button {
+      display: none;
+    }
+  }
+}
+.boardContainer {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  border-radius: 2px;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 1px 5px 10px 1px whitesmoke;
+
+  .loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 50px;
+    }
+  }
+
+  .boardItem,
+  .boardItemOpen {
+    box-shadow: 1px 5px 10px 1px rgb(181, 232, 250);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: rgb(204, 239, 252);
+    transition: transform 0.2s;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .boardItem:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
