@@ -30,7 +30,7 @@ function GameOverModal(props) {
       <Modal.Footer>
         <div className="text-center w-100">
           <Button className="startGameButton" onClick={props.onHide}>
-            Play Again
+            Close
           </Button>
         </div>
       </Modal.Footer>

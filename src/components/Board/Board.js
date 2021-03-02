@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Board.scss";
-import loader from "../../assets/loader.gif";
 import pokeball from "../../assets/pokeball.png";
 import boardItems from "./BoardItems";
 import Timer from "react-compound-timer/build";
@@ -8,7 +7,6 @@ import GameOverModal from "../Modal/GameOverModal";
 
 function Board() {
   const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [openedCards, setOpenedCards] = useState([]);
   const [tries, setTries] = useState(0);
   const [success, setSuccess] = useState(0);
@@ -104,22 +102,16 @@ function Board() {
       />
 
       <div className="boardContainer">
-        {loading && (
-          <div className="loader">
-            <img src={loader} alt="loader" />
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className={card.open ? "boardItemOpen" : "boardItem"}
+            onClick={() => handleClick(card)}
+          >
+            {card.open && <img src={card.url} alt={card.id} />}
+            {!card.open && <img src={pokeball} alt="" />}
           </div>
-        )}
-        {!loading &&
-          cards.map((card, index) => (
-            <div
-              key={index}
-              className={card.open ? "boardItemOpen" : "boardItem"}
-              onClick={() => handleClick(card)}
-            >
-              {card.open && <img src={card.url} alt={card.id} />}
-              {!card.open && <img src={pokeball} alt="" />}
-            </div>
-          ))}
+        ))}
       </div>
     </div>
   );
